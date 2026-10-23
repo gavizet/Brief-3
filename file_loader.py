@@ -1,6 +1,5 @@
 import json
 from json import JSONDecodeError
-from subsidiary import Subsidiary
 
 
 class FileLoader:
@@ -15,12 +14,7 @@ class FileLoader:
             with open(path, "r", encoding="utf-8") as json_file:
                 data = json.load(json_file)
             if isinstance(data, dict):
-                all_subsidiaries = []
-                print("Top-level keys:", list(data.keys()))
-                for subsidiary, employees in data.items():
-                    all_subsidiaries.append(Subsidiary(subsidiary, employees))
-            elif isinstance(data, list):
-                print("Top-level list length:", len(data))
+                return data
         except (FileNotFoundError, ValueError) as error:
             print(f"File not found: {error}")
         except JSONDecodeError as e:

@@ -1,54 +1,69 @@
+from employee import Employee
+
+
 class Subsidiary:
-    """
-    Class for a company's subsidiary
+    """Class for a company's subsidiary
     Subclass is Employee
     """
 
-    def __init__(self, name: str, employees: list[dict]) -> None:
+    """
+    @staticmethod
+    def __check_args(name, employees):
+        if not isinstance(name, str):
+            raise TypeError("Not a valid name for subsidiary, expected a string")
+        if not isinstance(employees, list):
+            raise TypeError("Not a valid list for subsidiary data")
+        for empl in employees:
+            if (
+                not {
+                    "name",
+                    "job",
+                    "hourly_rate",
+                    "weekly_hours_worked",
+                    "contract_hours",
+                }
+                <= empl.keys()
+            )
+                raise KeyError(f"Missing a key in the employee {empl}dictionary")
+    """
+
+    def __init__(self, name: str) -> None:
+        """Init an empty subsidiary
+
+        Args:
+            name (str): the name of the subsidiary
+        """
         self.name = name
-        self.employee_num = len(employees)
-        print(f"{name}: {self.employee_num} employees")
-        self.mean_salary = self.get_mean_salary(employees)
-        self.highest_salary = self.get_highest_salary(employees)
-        self.lowest_salary = self.get_lowest_salary(employees)
+        self._employees: list[Employee] = []
 
-    """
-    def _is_valid_dict(function):
-        def wrapper(self, employees, *args, **kwargs):
-            #Wrapper function for our _is_valid_dict decorator
-            #Make sure the dict passed to our method is valid
-            if not isinstance(employees, list):
-                print("Not a valid list for subsidiary data")
-            for empl in employees:
-                if (
-                    not {
-                        "name",
-                        "job",
-                        "hourly_rate",
-                        "weekly_hours_worked",
-                        "contract_hours",
-                    }
-                    <= empl.keys()
-                ):
-                    print("coucou")
-                    return KeyError(f"Missing a key in the employee {empl}dictionary")
-            result = function(self, employees, *args, **kwargs)
-            return result
-        return wrapper
-    """
+    def add_employee(self, employee: Employee) -> None:
+        """Add an employee to the subsidiary
 
-    # @_is_valid_dict
-    def get_mean_salary(self, employees) -> float:
-        pass
+        Args:
+            employee (Employee): the object to add to the subsidiary
 
-    # @_is_valid_dict
-    def get_highest_salary(self, employees) -> float:
-        pass
+        Raises:
+            TypeError: if the employee is not a Employee instance
+        """
+        if not isinstance(employee, Employee):
+            raise TypeError(f"Expected an Employee, have {type(employee)} instead.")
+        self._employees.append(employee)
 
-    # @_is_valid_dict
-    def get_lowest_salary(self, employees) -> float:
-        pass
+    def get_subsidiary_salary_stats(self) -> float:
+        all_salaries = [employee.montly_salary for employee in self._employees]
+        self.mean_salary = sum(all_salaries) / len(all_salaries)
+        self.highest_salary = max(all_salaries)
+        self.lowest_salary = min(all_salaries)
 
-    # @_is_valid_dict
-    def print_subsidiary_data(self, employees) -> None:
-        pass
+    def __str__(self):
+        return f"Subsidiary: {self.name}\n"
+
+    def __repr__(self):
+        return (
+            f"\n===============================================\n\n"
+            f"Salary statistics for subsidiary {self.name}:\n"
+            f"Mean salary: {self.mean_salary:.2f}€\n"
+            f"Highest salary: {self.highest_salary:.2f}€\n"
+            f"Lowest salary: {self.lowest_salary:.2f}€\n\n"
+            f"==============================================="
+        )

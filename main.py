@@ -2,6 +2,7 @@ from company import Company
 from employee import Employee
 from file_loader import FileLoader
 from subsidiary import Subsidiary
+from write_to_csv import write_dict_to_csv
 
 
 def build_company(company_name: str, data: dict) -> Company:
@@ -57,6 +58,8 @@ def main() -> None:
     company = build_company("MyCompanyName", company_data)
     # Print the data
     print_formated_data(company)
+    # Export to CSV file
+    write_dict_to_csv(company)
 
 
 if __name__ == "__main__":

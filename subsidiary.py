@@ -62,6 +62,8 @@ class Subsidiary:
     def __str__(self):
         return f"Subsidiary: {self.name}\n"
 
+
+"""
     def __repr__(self):
         return (
             f"\n===============================================\n\n"
@@ -71,3 +73,4 @@ class Subsidiary:
             f"Lowest salary: {self.lowest_salary:.2f}€\n\n"
             f"==============================================="
         )
+    """

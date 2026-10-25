@@ -49,7 +49,11 @@ class Subsidiary:
             raise TypeError(f"Expected an Employee, have {type(employee)} instead.")
         self._employees.append(employee)
 
-    def get_subsidiary_salary_stats(self) -> float:
+    def get_subsidiary_salary_stats(self) -> None:
+        """Gets all stats relevant for our subsidiary.
+        Loops over all employees to get all salaries.
+        Does a simple, mean, max and min over that data, sets class attributes accordingly
+        """
         all_salaries = [employee.montly_salary for employee in self._employees]
         self.mean_salary = sum(all_salaries) / len(all_salaries)
         self.highest_salary = max(all_salaries)

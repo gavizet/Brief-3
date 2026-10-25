@@ -1,7 +1,7 @@
-from file_loader import FileLoader
 from company import Company
-from subsidiary import Subsidiary
 from employee import Employee
+from file_loader import FileLoader
+from subsidiary import Subsidiary
 
 
 def build_company(company_name: str, data: dict) -> Company:

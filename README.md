@@ -2,9 +2,13 @@
 Calcul des Salaires Mensuels dans une Entreprise avec plusieurs filiales
 
 ## Usage
-`python3 main.py`
-Launches everything, no args options as of now.
 No dependencies to install, using core python modules json and csv.
+`python3 main.py`
+Will:
+- Load and read the JSON employees_data.json file
+- Build the company, its subsidiaries and its employees based on that data
+- Print relevant / wanted statistics
+- Store these relevant statistics into 2 CSV files, one for employee wages and one for company salary stats
 
 ## TODO
 - Add CSV exporting (bonus)

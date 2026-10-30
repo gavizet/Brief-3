@@ -9,19 +9,20 @@ class FileLoader:
         pass
 
     @staticmethod
-    def load(path: str) -> None:
+    def load(path: str) -> dict:
         try:
             with open(path, "r", encoding="utf-8") as json_file:
                 data = json.load(json_file)
             if isinstance(data, dict):
                 return data
-        except (FileNotFoundError, ValueError) as error:
-            print(f"File not found: {error}")
         except JSONDecodeError as e:
             print("Invalid JSON.")
             print(f"Line {e.lineno}, column {e.colno}: {e.msg}")
+        except (FileNotFoundError, ValueError) as error:
+            print(f"File not found: {error}")
         else:
             print("Loaded JSON successfully.")
+        return {}
 
     @staticmethod
     def display(dataframe) -> None:

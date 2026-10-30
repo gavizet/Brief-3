@@ -1,12 +1,14 @@
 import csv
-# employee_wages.csv
-# employee_id, name, job, monthly_salary
-
-# salary_stats.csv
-# name, employee_count, mean_salary, highest_salary, lowest_salary
 
 
 def write_dict_to_csv(company) -> None:
+    """Takes company data, and write it into two separate formated csv files
+    wage_statistics.csv: contains data for each employee
+    salary_stats.csv: contains salary stats for each company/subsidiary
+
+    Args:
+        company (Company): Company object we generated previously, contains all data about subsidiaries and employees.
+    """
     # Open employee csv file with write rights
     with (
         open("wage_statistics.csv", "w", newline="") as employee_csv_file,

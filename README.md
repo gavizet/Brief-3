@@ -11,9 +11,9 @@ Will:
 - Store these relevant statistics into 2 CSV files, one for employee wages and one for company salary stats. Will rewrite the CSV files every time you launch the program.
 
 ## TODO
-- Add CSV exporting (bonus)
 - Add graphic interface - Tkinter (bonus)
 - Add getter / setter methods, better encapsulation
+- Cleanup write_dict_to_csv into OOP with CsvWriter class
 
 ## Docs
 ### Encapsulation / Getters-Setters

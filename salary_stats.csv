@@ -1,0 +1,5 @@
+company_id,name,mean_salary,max_salary,min_salary
+0,MyCompanyName,6883.6,11330.0,3600.0
+1,TechCorp,6975.6,11300.0,3600.0
+2,DesignWorks,6748.111111111111,10700.0,3960.0
+3,ProjectLead,6945.882352941177,11330.0,4480.0

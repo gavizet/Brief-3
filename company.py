@@ -37,7 +37,7 @@ class Company:
         Does a simple, mean, max and min over that data, sets class attributes accordingly
         """
         all_salaries = [
-            employee.montly_salary
+            employee.monthly_salary
             for subsidiary in self._subsidiaries
             for employee in subsidiary._employees
         ]

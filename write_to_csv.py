@@ -6,14 +6,73 @@ import csv
 # name, employee_count, mean_salary, highest_salary, lowest_salary
 
 
-def write_dict_to_csv(data) -> None:
-    with open("wage_statistics.csv", "w", newline="") as csvfile:
-        fieldnames = ["employee_id", "name", "job", "monthly_salary"]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-        writer.writeheader()
-        # Do I check data types before writing ? Think it has no value here, shoudl be checked when we read/store the JSON input data
-        # Exemple row
-        writer.writerow(
-            {"id": 1, "name": "test_name", "job": "pleb", "monthly_salary": 1234.56}
+def write_dict_to_csv(company) -> None:
+    # Open employee csv file with write rights
+    with (
+        open("wage_statistics.csv", "w", newline="") as employee_csv_file,
+        open("salary_stats.csv", "w", newline="") as company_csv_file,
+    ):
+        # Create list of fieldnames for employee csv
+        employee_fieldnames = [
+            "employee_id",
+            "subsidiary_name",
+            "employee_name",
+            "job",
+            "monthly_salary",
+        ]
+        # Create the csv writer object with given fieldnames
+        employee_writer = csv.DictWriter(
+            employee_csv_file, fieldnames=employee_fieldnames
         )
+        # Write header in employee csv file
+        employee_writer.writeheader()
+        employee_id = 0
+
+        # Create list of fieldnames for company csv
+        company_fieldnames = [
+            "company_id",
+            "name",
+            "mean_salary",
+            "max_salary",
+            "min_salary",
+        ]
+        # Create the company csv writer object with given fieldnames
+        company_writer = csv.DictWriter(company_csv_file, fieldnames=company_fieldnames)
+        # Write heaer in company csv file
+        company_writer.writeheader()
+        # Write first row in salary_stats.csv based on company data
+        company_writer.writerow(
+            {
+                "company_id": 0,
+                "name": company.name,
+                "mean_salary": company.mean_salary,
+                "max_salary": company.highest_salary,
+                "min_salary": company.lowest_salary,
+            }
+        )
+        company_id = 1
+        for subsidiary in company._subsidiaries:
+            # Write row in salary_stats.csv file based on each subsidiary's data
+            company_writer.writerow(
+                {
+                    "company_id": company_id,
+                    "name": subsidiary.name,
+                    "mean_salary": subsidiary.mean_salary,
+                    "max_salary": subsidiary.highest_salary,
+                    "min_salary": subsidiary.lowest_salary,
+                }
+            )
+            company_id += 1
+            for employee in subsidiary._employees:
+                # Write row into the wage_statistics.csv file
+                employee_writer.writerow(
+                    {
+                        "employee_id": employee_id,
+                        "subsidiary_name": subsidiary.name,
+                        "employee_name": employee.name,
+                        "job": employee.job,
+                        "monthly_salary": employee.monthly_salary,
+                    }
+                )
+                # Increment employee ID, so it can be used as primary key / identifier for each employees, since they can have the same name, salary, etc
+                employee_id += 1

@@ -8,7 +8,7 @@ Will:
 - Load and read the JSON employees_data.json file
 - Build the company, its subsidiaries and its employees based on that data
 - Print relevant / wanted statistics
-- Store these relevant statistics into 2 CSV files, one for employee wages and one for company salary stats
+- Store these relevant statistics into 2 CSV files, one for employee wages and one for company salary stats. Will rewrite the CSV files every time you launch the program.
 
 ## TODO
 - Add CSV exporting (bonus)

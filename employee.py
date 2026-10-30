@@ -23,7 +23,7 @@ class Employee:
         self.hourly_rate = hourly_rate
         self.weekly_hours = weekly_hours
         self.contract_hours = contract_hours
-        self.montly_salary = self.get_montly_salary()
+        self.monthly_salary = self.get_montly_salary()
 
     def get_montly_salary(self) -> float:
         """Get monthly salary for the employee, overtime is paid x1.5 of hourly_rate.
@@ -42,6 +42,4 @@ class Employee:
         return self.__repr__()
 
     def __repr__(self):
-        return (
-            f"{self.name}\t\t| {self.job}\t | Monthly salary: {self.montly_salary:.2f}€"
-        )
+        return f"{self.name}\t\t| {self.job}\t | Monthly salary: {self.monthly_salary:.2f}€"

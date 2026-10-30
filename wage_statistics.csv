@@ -1,0 +1,51 @@
+employee_id,subsidiary_name,employee_name,job,monthly_salary
+0,TechCorp,Helen,Chef de projet,9500.0
+1,TechCorp,Quincy,Testeur,5824.0
+2,TechCorp,Fred,Manager,7260.0
+3,TechCorp,Steve,Chef de projet,6400.0
+4,TechCorp,Linda,Chef de projet,6800.0
+5,TechCorp,Bob,Analyste,5600.0
+6,TechCorp,Steve,Chef de projet,11300.0
+7,TechCorp,Karen,Développeur,4620.0
+8,TechCorp,Paul,Designer,3600.0
+9,TechCorp,Bob,Développeur,7630.0
+10,TechCorp,Bob,Manager,11000.0
+11,TechCorp,Mike,Testeur,3696.0
+12,TechCorp,Mike,Chef de projet,8900.0
+13,TechCorp,Charlie,Chef de projet,6400.0
+14,TechCorp,Helen,Testeur,6104.0
+15,DesignWorks,Jack,Analyste,6080.0
+16,DesignWorks,Emma,Designer,4080.0
+17,DesignWorks,Ian,Chef de projet,7600.0
+18,DesignWorks,Tina,Testeur,6104.0
+19,DesignWorks,Oliver,Chef de projet,10700.0
+20,DesignWorks,Jack,Designer,3960.0
+21,DesignWorks,Oliver,Manager,10450.0
+22,DesignWorks,Rachel,Testeur,4256.0
+23,DesignWorks,Ian,Testeur,5152.0
+24,DesignWorks,Jack,Chef de projet,7600.0
+25,DesignWorks,Rachel,Analyste,5120.0
+26,DesignWorks,Helen,Développeur,5320.0
+27,DesignWorks,George,Développeur,4200.0
+28,DesignWorks,Rachel,Testeur,6104.0
+29,DesignWorks,Emma,Chef de projet,9500.0
+30,DesignWorks,Mike,Manager,7040.0
+31,DesignWorks,Ian,Chef de projet,8200.0
+32,DesignWorks,Bob,Chef de projet,10000.0
+33,ProjectLead,Fred,Testeur,5992.0
+34,ProjectLead,Mike,Développeur,4480.0
+35,ProjectLead,Oliver,Chef de projet,7900.0
+36,ProjectLead,Tina,Manager,8140.0
+37,ProjectLead,Linda,Testeur,4480.0
+38,ProjectLead,Rachel,Designer,6540.0
+39,ProjectLead,Bob,Manager,11330.0
+40,ProjectLead,Steve,Chef de projet,9500.0
+41,ProjectLead,Jack,Chef de projet,6200.0
+42,ProjectLead,Jack,Designer,6180.0
+43,ProjectLead,Charlie,Manager,10120.0
+44,ProjectLead,Oliver,Développeur,4900.0
+45,ProjectLead,Nina,Analyste,7600.0
+46,ProjectLead,Steve,Designer,5340.0
+47,ProjectLead,Linda,Développeur,5110.0
+48,ProjectLead,Jack,Testeur,5768.0
+49,ProjectLead,Charlie,Chef de projet,8500.0

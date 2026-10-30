@@ -54,7 +54,7 @@ class Subsidiary:
         Loops over all employees to get all salaries.
         Does a simple, mean, max and min over that data, sets class attributes accordingly
         """
-        all_salaries = [employee.montly_salary for employee in self._employees]
+        all_salaries = [employee.monthly_salary for employee in self._employees]
         self.mean_salary = sum(all_salaries) / len(all_salaries)
         self.highest_salary = max(all_salaries)
         self.lowest_salary = min(all_salaries)
